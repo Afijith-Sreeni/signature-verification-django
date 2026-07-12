@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+    <link rel="stylesheet" href="{% static 'css/bg.css' %}">
+</head>
+<body>
+    
+        <a href="{% url 'abhi' %}">NAMIRAM</a>
+        
+        <h1>ramayaa</h1>
+        <div>
+        <img class="home.jpg" src="{% static 'images/home.jpg' %}" style="height: 400px;">
+        </div>
+        
+        {% for i in data %}
+        <h1>{{i.name}}</h1>
+        {% block content %}
+        {% endblock %}
+        <img src="{{i.image.url}}" alt="ee" style="height: 250px;">
+        {% endfor %}
+        
+</body>
+</html>
